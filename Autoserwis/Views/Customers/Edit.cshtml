@@ -1,0 +1,121 @@
+﻿@model Autoserwis.Models.Customers
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Customers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CustomerId" />
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerSurname" class="control-label"></label>
+                <input asp-for="CustomerSurname" class="form-control" />
+                <span asp-validation-for="CustomerSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerPhoneNr" class="control-label"></label>
+                <input asp-for="CustomerPhoneNr" class="form-control" />
+                <span asp-validation-for="CustomerPhoneNr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerEmail" class="control-label"></label>
+                <input asp-for="CustomerEmail" class="form-control" />
+                <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarRegistration" class="control-label"></label>
+                <input asp-for="CustomerCarRegistration" class="form-control" />
+                <span asp-validation-for="CustomerCarRegistration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarMark" class="control-label"></label>
+                <input asp-for="CustomerCarMark" class="form-control" />
+                <span asp-validation-for="CustomerCarMark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarModel" class="control-label"></label>
+                <input asp-for="CustomerCarModel" class="form-control" />
+                <span asp-validation-for="CustomerCarModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarCapitality" class="control-label"></label>
+                <input asp-for="CustomerCarCapitality" class="form-control" />
+                <span asp-validation-for="CustomerCarCapitality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarProductionYear" class="control-label"></label>
+                <input asp-for="CustomerCarProductionYear" class="form-control" />
+                <span asp-validation-for="CustomerCarProductionYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarEngine" class="control-label"></label>
+                <input asp-for="CustomerCarEngine" class="form-control" />
+                <span asp-validation-for="CustomerCarEngine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarVIN" class="control-label"></label>
+                <input asp-for="CustomerCarVIN" class="form-control" />
+                <span asp-validation-for="CustomerCarVIN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarMileage" class="control-label"></label>
+                <input asp-for="CustomerCarMileage" class="form-control" />
+                <span asp-validation-for="CustomerCarMileage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCarDateDayTime" class="control-label"></label>
+                <input asp-for="CustomerCarDateDayTime" class="form-control" />
+                <span asp-validation-for="CustomerCarDateDayTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService" class="control-label"></label>
+                <select asp-for="CustomerService" class="form-control">
+                    <option value="" selected="" disabled="disabled">-- wybierz usługę serwisową --</option>
+                    <option>PRZEGLĄD_SERWISOWY</option>
+                    <option>PRZEGLĄD_OKRESOWY_WEDŁUG_CZYNNOŚCI_KARTY_PRZEGLĄDOWEJ_PO_KONKRETNYM_PRZEBIEGU_LUB_COROCZNY</option>
+                    <option>WYMIANA_ROZRZĄDU</option>
+                    <option>WYMIANA_SPRZĘGŁA</option>
+                    <option>NAPRAWA_ELEMENTÓW_ZAWIESZENIA</option>
+                    <option>NAPRAWA_PODZESPOŁÓW_ELEKTRYCZNYCH</option>
+                    <option>WYMIANA_OPON</option>
+                    <option>WYMIANA_KLOCKÓW_HAMULCOWYCH_LUB_TARCZ</option>
+                    <option>WYMIANA_OLEJU</option>
+                    <option>NAPRAWA_BLACHARSKO_LAKIERNICZA</option>
+                    <option>INNE_USTERKI</option>
+                </select>
+                <span asp-validation-for="CustomerService" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerStatus" class="control-label"></label>
+                <select asp-for="CustomerStatus" class="form-control">
+                    <option value="" selected="" disabled="disabled">Wybierz status:</option>
+                    <option>Niezaakceptowany</option>
+                    <option>Zaakceptowany</option>
+                </select>
+                <span asp-validation-for="CustomerStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

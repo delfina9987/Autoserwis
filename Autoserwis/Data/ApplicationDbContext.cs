@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Autoserwis.Models;
 
 namespace Autoserwis.Data
 {
@@ -9,5 +10,6 @@ namespace Autoserwis.Data
             : base(options)
         {
         }
+        public DbSet<Autoserwis.Models.Customers> Customers { get; set; }
     }
 }

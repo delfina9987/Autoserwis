@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Autoserwis.Models.Customers>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhoneNr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarCapitality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarProductionYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarEngine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarVIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarMileage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCarDateDayTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerPhoneNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarCapitality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarProductionYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarEngine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarVIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarMileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCarDateDayTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerService)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerStatus)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
