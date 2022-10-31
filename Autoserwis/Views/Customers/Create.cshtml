@@ -1,35 +1,38 @@
 ﻿@model Autoserwis.Models.Customers
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Zarezerwuj wizytę";
 }
 
-<h1>Create</h1>
+<h1>Zarezerwuj wizytę</h1>
 
-<h4>Customers</h4>
+<!--<h4>Customers</h4>-->
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CustomerName" class="control-label"></label>
-                <input asp-for="CustomerName" class="form-control" />
+                <label asp-for="CustomerName" class="control-label">Podaj swoje imię:</label>
+                <input asp-for="CustomerName" class="form-control" id="CustomerName" size="20" minlength="2" placeholder="Imię" autofocus/>
                 <span asp-validation-for="CustomerName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CustomerSurname" class="control-label"></label>
-                <input asp-for="CustomerSurname" class="form-control" />
+                <label asp-for="CustomerSurname" class="control-label">Podaj swoje nazwisko:</label>
+                <input asp-for="CustomerSurname" class="form-control" id="CustomerSurname" size="30" minlength="2" placeholder="Nazwisko"/>
                 <span asp-validation-for="CustomerSurname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CustomerPhoneNr" class="control-label"></label>
-                <input asp-for="CustomerPhoneNr" class="form-control" />
+                <label asp-for="CustomerPhoneNr" class="control-label">Podaj swój numer telefonu:</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text">+48</span>
+                    <input asp-for="CustomerPhoneNr" class="form-control" type="tel" id="CustomerPhoneNr" size="9" pattern="\d{9}" placeholder="100100100"/>
+                </div>
                 <span asp-validation-for="CustomerPhoneNr" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CustomerEmail" class="control-label"></label>
-                <input asp-for="CustomerEmail" class="form-control" />
+                <label asp-for="CustomerEmail" class="control-label">Podaj swój adres e-mail:</label>
+                <input asp-for="CustomerEmail" class="form-control" type="email" id="CustomerEmail" size="100" placeholder="jan.kowalski@domena.pl"/>
                 <span asp-validation-for="CustomerEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -79,7 +82,7 @@
                 <span asp-validation-for="CustomerCarDateDayTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CustomerService" class="control-label"></label>
+                <label asp-for="CustomerService" class="control-label">Wybierz usługę serwisową:</label>
                 <select asp-for="CustomerService" class="form-control">
                     <option value="" selected="" disabled="disabled">-- wybierz usługę serwisową --</option>
                     <option>PRZEGLĄD_SERWISOWY</option>
@@ -103,15 +106,17 @@
                 <span asp-validation-for="CustomerStatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Rezerwuj" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
+<!--
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+-->
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
