@@ -4,6 +4,10 @@ using System.Diagnostics;
 
 namespace Autoserwis.Controllers
 {
+    public class ViewModel
+    {
+        public DateTime CustomerCarDateDayTime { get; set; }
+    }
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,7 +19,9 @@ namespace Autoserwis.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            ViewModel vm = new ViewModel() { CustomerCarDateDayTime = DateTime.Now };
+            return View(vm);
+            //return View();
         }
 
         public IActionResult Privacy()

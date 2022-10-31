@@ -20,6 +20,7 @@ namespace Autoserwis.Models
         public string CustomerCarMileage { get; set; }
 
         [DataType(DataType.DateTime)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy HH:mm}")]
         public DateTime CustomerCarDateDayTime { get; set; }
         
         public Service CustomerService { get; set; }

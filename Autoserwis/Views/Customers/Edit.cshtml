@@ -78,7 +78,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="CustomerCarDateDayTime" class="control-label"></label>
-                <input asp-for="CustomerCarDateDayTime" class="form-control" />
+                <input asp-for="CustomerCarDateDayTime" class="form-control" type="datetime-local" name="book" />
+                <script>
+                    var today = new Date().toISOString().slice(0, 16);
+                    document.getElementsByName("book")[0].min = today;
+                </script>
                 <span asp-validation-for="CustomerCarDateDayTime" class="text-danger"></span>
             </div>
             <div class="form-group">
